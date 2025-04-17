@@ -1,0 +1,33 @@
+/* For sm breakpoint (min-width: 640px) */
+@media only screen and (min-width: 640px) {
+    /* Content for sm breakpoint */
+}
+
+/* For md breakpoint (min-width: 768px) */
+@media only screen and (min-width: 768px) {
+    /* Content for md breakpoint */
+}
+
+/* For lg breakpoint (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
+    /* Content for lg breakpoint */
+}
+
+/* For xl breakpoint (min-width: 1280px) */
+@media only screen and (min-width: 1280px) {
+    /* Content for xl breakpoint */
+}
+
+/* For xxl breakpoint (min-width: 1536px) */
+@media only screen and (min-width: 1536px) {
+    /* Content for xxl breakpoint */
+}
+
+/* For text ellipsis (2 lines by default) */
+.ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

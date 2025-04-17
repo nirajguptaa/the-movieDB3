@@ -1,0 +1,112 @@
+.castSection {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.castSection .sectionHeading {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.castSection .listItems {
+    display: flex;
+    gap: 20px;
+    overflow-y: hidden;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+}
+
+.castSection .listItems .listItem {
+    text-align: center;
+    color: white;
+}
+
+.castSection .listItems .listItem .profileImg {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.castSection .listItems .listItem .profileImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.castSection .listItems .listItem .name {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.castSection .listItems .listItem .character {
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 0.5;
+}
+
+.castSection .castSkeleton {
+    display: flex;
+    gap: 20px;
+    overflow-y: hidden;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+}
+
+.castSection .castSkeleton .skItem .circle {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.castSection .castSkeleton .skItem .row {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.castSection .castSkeleton .skItem .row2 {
+    width: 75%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/* Media Query for Medium Screens (assuming "md" is for screens larger than a certain breakpoint) */
+@media (min-width: 768px) {
+    .castSection .listItems {
+        margin: 0;
+        padding: 0;
+    }
+
+    .castSection .listItems .listItem .profileImg {
+        width: 175px;
+        height: 175px;
+        margin-bottom: 25px;
+    }
+
+    .castSection .listItems .listItem .name {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .castSection .listItems .listItem .character {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .castSection .castSkeleton .skItem .circle {
+        width: 175px;
+        height: 175px;
+        margin-bottom: 25px;
+    }
+}

@@ -1,0 +1,264 @@
+.detailsBanner {
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.detailsBanner .backdrop-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    overflow: hidden;
+}
+
+.detailsBanner .backdrop-img .lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+}
+
+.detailsBanner .backdrop-img .lazy-load-image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.detailsBanner .opacity-layer {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.detailsBanner .content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detailsBanner .content .left {
+    flex-shrink: 0;
+}
+
+.detailsBanner .content .left .posterImg {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.detailsBanner .content .right {
+    color: white;
+}
+
+.detailsBanner .content .right .title {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.detailsBanner .content .right .subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.detailsBanner .content .right .genres {
+    margin-bottom: 25px;
+    flex-flow: row wrap;
+}
+
+.detailsBanner .content .right .overview {
+    margin-bottom: 25px;
+}
+
+.detailsBanner .content .right .overview .heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.detailsBanner .content .right .overview .description {
+    line-height: 24px;
+}
+
+.detailsBanner .content .right .circleRating {
+    max-width: 70px;
+    background-color: var(--black2);
+}
+
+.detailsBanner .content .right .playbtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.detailsBanner .content .right .playbtn svg {
+    width: 60px;
+}
+
+.detailsBanner .content .right .playbtn .text {
+    font-size: 20px;
+    transition: all 0.7s ease-in-out;
+}
+
+.detailsBanner .content .right .playbtn .triangle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: white;
+    transform: translateY(0);
+    transition: all 0.7s ease-in-out;
+}
+
+.detailsBanner .content .right .playbtn .circle {
+    stroke: white;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 1300;
+    transition: all 0.5s ease-in-out;
+}
+
+.detailsBanner .content .right .playbtn:hover .text {
+    color: var(--pink);
+}
+
+.detailsBanner .content .right .playbtn:hover .triangle {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    stroke: var(--pink);
+    animation: trailorPlay 0.7s ease-in-out;
+}
+
+.detailsBanner .content .right .playbtn:hover .circle {
+    stroke-dashoffset: 0;
+    stroke: var(--pink);
+}
+
+.detailsBanner .content .right .row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.detailsBanner .content .right .info {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    display: flex;
+}
+
+.detailsBanner .content .right .info .infoItem {
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.detailsBanner .content .right .info .text {
+    margin-right: 10px;
+    opacity: 0.5;
+    line-height: 24px;
+}
+
+.detailsBanner .content .right .info .text.bold {
+    font-weight: 600;
+    opacity: 1;
+}
+
+.detailsBanner .detailsBannerSkeleton {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detailsBanner .detailsBannerSkeleton .contentWrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.detailsBanner .detailsBannerSkeleton .left {
+    flex-shrink: 0;
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    aspect-ratio: 1/1.5;
+}
+
+.detailsBanner .detailsBannerSkeleton .right {
+    width: 100%;
+}
+
+.detailsBanner .detailsBannerSkeleton .right .row {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+
+.detailsBanner .detailsBannerSkeleton .right .row:nth-child(2) {
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+.detailsBanner .detailsBannerSkeleton .right .row:nth-child(5) {
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+/* Media Query for Medium Screens */
+@media (min-width: 768px) {
+    .detailsBanner {
+        margin-bottom: 0;
+        padding-top: 120px;
+        min-height: 700px;
+    }
+
+    .detailsBanner .content {
+        gap: 50px;
+        flex-direction: row;
+    }
+
+    .detailsBanner .content .left .posterImg {
+        max-width: 350px;
+    }
+
+    .detailsBanner .content .right .title {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .detailsBanner .content .right .subtitle {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .detailsBanner .content .right .overview .description {
+        padding-right: 100px;
+    }
+
+    .detailsBanner .content .right .circleRating {
+        max-width: 90px;
+    }
+
+    .detailsBanner .content .right .playbtn svg {
+        width: 80px;
+    }
+
+    .detailsBanner .detailsBannerSkeleton .left {
+        max-width: 350px;
+    }
+
+    .detailsBanner .detailsBannerSkeleton .right .row:nth-child(2) {
+        width: 75%;
+    }
+
+    .detailsBanner .detailsBannerSkeleton .right .row:nth-child(5) {
+        width: 50%;
+    }
+}

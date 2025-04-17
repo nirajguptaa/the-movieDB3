@@ -1,0 +1,152 @@
+@import "../../../mixins.scss";
+
+.heroBanner{
+    width: 100%;
+    height: 450px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include md{
+        height: 700px;
+    }
+    .backdrop-img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        overflow: hidden;
+        .lazy-load-image-background{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%; 
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .opacity-layer{
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(180deg, rgba(4,21,45,0) 0%, #04152d 79.17%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .heroBannerContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: white;
+        text-align: left;
+        position: relative;
+        max-width: 800px;
+        margin-top: 100px;
+        z-index: 1;
+        .title{
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            @include md{
+                margin-bottom: 0;
+                font-size: 90px;
+            }
+        }
+        .subTitle{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            @include md{
+                font-size: 24px;
+            }
+        }
+        .overview {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 40px;
+            @include md {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 15px 30px;
+                border-radius: 30px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .watchButton {
+                background-color: var(--pink);
+                border: none;
+                color: white;
+                svg {
+                    width: 20px;
+                    margin-right: 10px;
+                }
+                &:hover {
+                    background-color: var(--pink-light);
+                }
+            }
+
+            .moreButton {
+                background-color: rgba(255, 255, 255, 0.2);
+                border: 1px solid white;
+                color: white;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+        .searchInput{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            input{
+                width: calc(100% - 100px);
+                height: 50px;
+                background-color: white;
+                outline: 0;
+                border: 0;
+                border-radius: 30px 0 0 30px;
+                padding: 0 15px;
+                font-size: 14px;
+                @include md{
+                    width: calc(100% - 150px);
+                    height: 60px;
+                    font-size: 20px;
+                    padding: 0 30px;
+                }
+            }
+            button{
+                width: 100px;
+                height: 50px;
+                background: var(--gradient);
+                color: white;
+                outline: 0;
+                border: 0;
+                border-radius: 0 30px 30px 0;
+                font-size: 16px;
+                cursor: pointer;
+                @include md{
+                    width: 150px;
+                    height: 60px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
