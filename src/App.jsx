@@ -13,6 +13,7 @@ import Explore from './pages/explore/Explore';
 import PageNotFound from './pages/404/PageNotFound';
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
+import Profile from "./pages/profile/profile";
 
 function App() {
 
@@ -71,6 +72,7 @@ const genresCall = async ()=>{
     <Route path='/explore/:mediaType' element={<Explore/>}/>
     <Route path='/login' element={<Login />} />
     <Route path='/signup' element={<Signup />} />
+    <Route path='/profile' element={<Profile />} />
     <Route path='*' element={<PageNotFound/>}/>
   </Routes>
   <Footer/>

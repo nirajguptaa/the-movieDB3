@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -16,6 +16,23 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
     const posterUrl = data.poster_path
         ? url.poster + data.poster_path
         : PosterFallback;
+
+    const [isWatched, setIsWatched] = useState(() => {
+        const watched = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+        return watched.some(movie => movie.id === data.id);
+    });
+
+    const handleMarkAsWatched = (e) => {
+        e.stopPropagation(); // Prevent navigation when clicking the button
+        const watched = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+        
+        if (!isWatched) {
+            const updatedWatched = [...watched, data];
+            localStorage.setItem('watchedMovies', JSON.stringify(updatedWatched));
+            setIsWatched(true);
+        }
+    };
+
     return (
         <div
             className="movieCard"
@@ -38,6 +55,14 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
                     {dayjs(data.release_date).format("MMM D, YYYY")}
                 </span>
             </div>
+            {!isWatched && (
+                <button 
+                    className="watchButton" 
+                    onClick={handleMarkAsWatched}
+                >
+                    Mark as Watched
+                </button>
+            )}
         </div>
     );
 };

@@ -111,22 +111,9 @@ const Header = () => {
                 </li>
                 <li className="menuItem" onClick={() => {navigationHandler("movie")}}>Movies</li>
                 <li className="menuItem" onClick={() => {navigationHandler("tv")}}>TV Shows</li>
-                <li className="menuItem profile-item" onClick={() => isAuthenticated ? setShowProfileMenu(!showProfileMenu) : navigate("/login")}>
+                <li className="menuItem" onClick={() => navigate("/profile")}>
                     <CgProfile />
-                    <span>{isAuthenticated ? username : 'Profile'}</span>
-                    {showProfileMenu && isAuthenticated && (
-                        <div className="profile-dropdown">
-                            <div className="profile-info">
-                                <span className="username">{username}</span>
-                                <button className="logout-btn" onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleLogout();
-                                }}>
-                                    Logout
-                                </button>
-                            </div>
-                        </div>
-                    )}
+                    <span>Profile</span>
                 </li>
                 <li className="menuItem">
                     <HiOutlineSearch onClick={openSearch}/>
