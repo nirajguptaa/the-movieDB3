@@ -60,3 +60,22 @@
 .watchButton:hover {
     opacity: 0.8;
 }
+.movieCard {
+    width: 200px;
+    margin: auto;
+    height: auto;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.movieCard {
+    background-color: transparent; /* OR remove this line entirely */
+}
+
