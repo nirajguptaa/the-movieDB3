@@ -14,6 +14,7 @@ import PageNotFound from './pages/404/PageNotFound';
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import Profile from "./pages/profile/profile";
+import ChatBot from "./components/chatbot/ChatBot";
 
 function App() {
 
@@ -54,8 +55,16 @@ const genresCall = async ()=>{
 
   const data = await Promise.all(promises);
   console.log(data);
-  data.map(({genres}) =>{
-    return genres.map((item)=>(allGenres[item.id] = item));
+  // data.map(({genres}) =>{
+  //   return genres.map((item)=>(allGenres[item.id] = item));
+  // });
+
+  data.forEach(({ genres }) => {
+    if (Array.isArray(genres)) {
+      genres.forEach((item) => {
+        allGenres[item.id] = item;
+      });
+    }
   });
 
   //store genres in redux store
@@ -75,6 +84,7 @@ const genresCall = async ()=>{
     <Route path='/profile' element={<Profile />} />
     <Route path='*' element={<PageNotFound/>}/>
   </Routes>
+  <ChatBot />
   <Footer/>
   </BrowserRouter>)
 }

@@ -13,6 +13,7 @@
     line-height: 34px;
     color: white;
     margin-bottom: 25px;
+    
 }
 
 .searchResultsPage .content {
@@ -25,3 +26,4 @@
 .searchResultsPage .content .movieCard .posterBlock {
     margin-bottom: 20px;
 }
+

@@ -1,0 +1,116 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-toggle svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.chatbot-window {
+    width: 350px;
+    height: 500px;
+    background: var(--black-light);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-header {
+    background: var(--gradient);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.messages-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.message.user {
+    background: var(--pink);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.message.bot {
+    background: var(--black3);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.message.loading {
+    background: var(--black3);
+    color: var(--gray-light);
+}
+
+.input-form {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    background: var(--black3);
+}
+
+.input-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--black-lighter);
+    border-radius: 20px;
+    background: var(--black-light);
+    color: white;
+}
+
+.input-form button {
+    padding: 8px 20px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-form button:hover {
+    opacity: 0.8;
+}

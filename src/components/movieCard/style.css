@@ -81,9 +81,9 @@
     color: white;
     display: flex;
     flex-direction: column;
-}
+} 
 
-.movieCard .textBlock .title {
+ .movieCard .textBlock .title {
     font-size: 16px;
     margin-bottom: 10px;
     line-height: 24px;
@@ -98,11 +98,116 @@
     }
 }
 
-.movieCard .textBlock .date {
+/* .movieCard .textBlock .date {
     font-size: 14px;
     opacity: 0.5;
-}
+} */
 
 .movieCard:hover .posterBlock {
     opacity: 0.5;
+}
+
+.watchButton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movieCard:hover .watchButton {
+    opacity: 1;
+}
+
+/* .watchedBadge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #4CAF50;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+} */
+
+.watchedBadge svg {
+    font-size: 16px;
+}
+
+.watchedBadge span {
+    color: white;
+}
+
+.watchedBadge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: green;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.watchButton {
+    z-index: 2;
+}
+
+.watchedBadge {
+    z-index: 2;
+}
+
+.watchButton {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movieCard:hover .watchButton {
+    opacity: 1;
+}
+
+.watchButton {
+    z-index: 2;
+}
+
+.posterBlock {
+    position: relative;
+    /* rest of your styles */
+}
+
+.watchButton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ✅ Make the button visible only on hover */
+.movieCard:hover .watchButton {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
